@@ -8,9 +8,10 @@ use Doctrine\Persistence\ObjectManager;
 
 class CarouselSlideFixtures extends Fixture
 {
+    public const MAX_COUNT_CAROUSEL = 3;
     public function load(ObjectManager $manager)
     {
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < self::MAX_COUNT_CAROUSEL; $i++) {
             $slide = new CarouselSlide();
             $slide->setNumero($i + 1);
             $slide->setTitle('Article ' . $i);
